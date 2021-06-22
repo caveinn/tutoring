@@ -6,12 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-
+</head>  
 <body>
 
+ <form method="post" action="url" onsubmit="formSubmit(event)">
+     <input id="nameInput" type="text" name="name" onchange="inputChange(event)">
+     <input type="text" name="age">
+     <input type="submit" value="submit" >
+
+ </form>
 </body>
 <script>
+
+    let formSubmit = (e) => { 
+
+        e.preventDefault()
+        console.log("submitted")
+    }
+
+    let inputChange =(e) => {
+        e.preventDefault()
+       console.log(document.getElementById("nameInput").value)
+       console.log(document.querySelector("#nameInput"))
+       //call save to backend
+
+    }
+
+
     const name = 'Kevin'
     let string = "New Kevin"
     let character = 'c'
